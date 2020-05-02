@@ -6,7 +6,7 @@ export default class HelpPage extends React.Component {
   render() {
     return (
       <div>
-        <Header isAuthed={this.props.isAuthed} ></Header>
+        <Header></Header>
         <section className="page-title">
           <h1>Help</h1>
         </section>

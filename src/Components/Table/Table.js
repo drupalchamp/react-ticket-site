@@ -1,6 +1,7 @@
 import React from 'react';
 import './Table.css';
 import TableItem from "./TableItem";
+import { Link } from 'react-router-dom';
 
 export default class Card extends React.Component {
   render() {
@@ -29,13 +30,13 @@ export default class Card extends React.Component {
               </table>
             </div>
             <div className="feed-area">
-              <a className="button btn btn-primary btn_main btn_feed" href="/"><span className="icon glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download CSV</a>
+              <button className="button btn btn-primary btn_main btn_feed"><span className="icon glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download CSV</button>
             </div>
           </section>
         :
           <>
             <div className="page-top-msg space-up-large"><span className="icon glyphicon glyphicon-exclamation-sign"></span>Sorry! No ticket available for this searching criteria.</div>
-            <p className="center"><a className="button btn btn-primary btn_main btn_error" href="/dashboard">Click here</a> to go to Homepage.</p>
+            <p className="center"><Link className="button btn btn-primary btn_main btn_error" to="/dashboard">Click here</Link> to go to Homepage.</p>
           </>
         }
       </>

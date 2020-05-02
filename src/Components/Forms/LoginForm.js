@@ -1,6 +1,6 @@
 import React from 'react';
 import './Form.css';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -10,20 +10,20 @@ class LoginForm extends React.Component {
     };
   }
 
+  //Function to handle login action
   handleLogin = (event) => {
     event.preventDefault();
     const name = event.target.elements.name.value;
     const pass = event.target.elements.pass.value;
-    console.log(`name : ${name}, pass: ${pass}`);
+    //console.log(`name : ${name}, pass: ${pass}`);
     
+    //TODO authorization from original data
     if(name === 'test' && pass === 'password'){
       localStorage.setItem( 'isAuthed', true );
       this.props.history.push('/dashboard');
-      this.forceUpdate();
-      
+      //this.forceUpdate();
       window.location.reload()
     }
-      
     else
       this.setState({alert: 'Invalid Credentials'});
   }
@@ -47,14 +47,13 @@ class LoginForm extends React.Component {
               <button className="button btn btn-primary btn_main btn_dark left" type="submit" value="Log In">
                 <span className="icon glyphicon glyphicon-log-in" ></span>Log in
               </button>
-              <a href="/password" className="button btn btn-primary btn_main right">Reset your password</a>
+              <Link to="/password" className="button btn btn-primary btn_main right">Reset your password</Link>
             </div>
           </form>
         </div>
         	username = test, pass = password
         {/* <a href="/dashboard">Skip Login</a> */}
         {/* <a href="/dashboard" onClick = {this.props.loginHandler}>Skip Login</a> */}
-        
       </section>
     );
   }

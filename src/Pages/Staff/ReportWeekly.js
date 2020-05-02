@@ -10,7 +10,7 @@ export default class ReportWeekly extends React.Component {
   render() {
     return (
       <div>
-        <Header isAuthed={this.props.isAuthed} ></Header>
+        <Header></Header>
         <section className="page-title">
           <h1>Report By Week</h1>
         </section>

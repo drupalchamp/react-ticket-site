@@ -6,7 +6,7 @@ export default class PayTicketStatusPage extends React.Component {
   render() {
     return (
       <div>
-        <Header isAuthed={this.props.isAuthed} ></Header>
+        <Header></Header>
         <section className="page-title">
           
         </section>

@@ -10,7 +10,7 @@ export default class ReportYerly extends React.Component {
   render() {
     return (
       <div>
-        <Header isAuthed={this.props.isAuthed} ></Header>
+        <Header></Header>
         <section className="page-title">
           <h1>Report By Year</h1>
         </section>

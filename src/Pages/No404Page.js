@@ -4,11 +4,11 @@ import Header from "../Components/Header/Header";
 export default class No404Page extends React.Component {
 
   render() {
-    console.log(window.location.href);
+    //console.log(window.location.href);
     var isAuthed = localStorage.getItem( 'isAuthed' ) || false;
     return (
       <div>
-        <Header isAuthed={this.props.isAuthed}></Header>
+        <Header></Header>
         { ((window.location.href === 'http://localhost:3000/login') && !isAuthed) || ((window.location.href === 'http://localhost:3000/dashboard') && isAuthed) ? '' : 
           <>
             <section className="page-title">

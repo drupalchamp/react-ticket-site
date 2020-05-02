@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Form.css';
 
 export default class PayTicketForm extends React.Component {
@@ -48,7 +49,7 @@ export default class PayTicketForm extends React.Component {
             </div>
           </form>
         </div>
-        <a href="/ticket-status">Skip Pay</a>
+        <Link to="/ticket-status">Skip Pay</Link>
       </section>
     );
   }

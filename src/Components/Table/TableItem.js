@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class CardItem extends React.Component {
 
@@ -24,7 +25,7 @@ export default class CardItem extends React.Component {
               ( this.props.field_payment_status.toLowerCase() === 'paid' ?
                 <span className="table-btn success">{this.props.field_payment_status}</span> :
                 ( this.props.field_payment_status.toLowerCase() === 'unpaid' ?
-                  <span className="btn btn-primary btn_main table-btn danger"><a href="/ticket-pay">{this.props.field_payment_status}</a></span> :
+                  <span className="btn btn-primary btn_main table-btn danger"><Link to={"/ticket-pay"}>{this.props.field_payment_status}</Link></span> :
                   ( this.props.field_payment_status.toLowerCase() === 'canceled' ?
                     <span className="table-btn inactive">{this.props.field_payment_status}</span> :
                     this.props.field_payment_status
@@ -36,7 +37,11 @@ export default class CardItem extends React.Component {
             
           </td>
           <td className="table-column center">
-            <span className="btn btn-primary btn_main table-btn"><a href="/ticket-edit">View</a></span>
+            <span className="btn btn-primary btn_main table-btn">
+              <Link to={{
+                pathname: '/ticket-edit' , tktId: this.props.title
+              }}>View</Link>
+            </span>
           </td>
         </tr>
 

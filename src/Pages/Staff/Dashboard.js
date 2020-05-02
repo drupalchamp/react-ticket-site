@@ -9,7 +9,7 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <Header isAuthed={this.props.isAuthed} ></Header>
+        <Header></Header>
         <section className="page-title">
           <h1>Dashboard</h1>
         </section>

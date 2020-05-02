@@ -14,12 +14,10 @@ import PasswordPage from "./Pages/PasswordPage";
 import PayTicketSearchPage from "./Pages/PayTicketSearchPage";
 import PayTicketPage from "./Pages/PayTicketPage";
 import PayTicketStatusPage from "./Pages/PayTicketStatusPage";
-
 import Dashboard from "./Pages/Staff/Dashboard";
 import CreateTicketPage from "./Pages/Staff/CreateTicket";
 import SearchTicketPage from "./Pages/Staff/SearchTicket";
 import EditTicketPage from "./Pages/Staff/EditTicket";
-
 import ReportPage from "./Pages/Staff/Report";
 import BulkPendingTicketPage from "./Pages/Staff/BulkPendingTicket";
 import ReportGraphPage from "./Pages/Staff/ReportGraph";
@@ -68,16 +66,13 @@ class App extends Component {
 
   componentDidMount() {
     this.loadAllData();
-    
-    console.log(`All data reloaded.`);
   }
   componentWillUnmount() {
     clearTimeout(this.intervalID);
   }
 
   async loadAllData(){
-    const taxonomyList = await this.loadTaxonomy();
-    //this.setState({taxonomy_data: taxonomyList});
+    await this.loadTaxonomy();
     //console.log(`Taxonomy loaded`);
     //console.log(this.state.taxonomy_data);
 
@@ -93,7 +88,7 @@ class App extends Component {
 
     //Reload Json data at specific interval - 30sec
     this.intervalID = setTimeout(this.loadAllData, 30000);
-    console.log(`All data reloaded.`);
+    //console.log(`All data reloaded.`);
   }
 
   async loadTaxonomy(){
@@ -117,9 +112,7 @@ class App extends Component {
       taxonomyList[key] = item;
     }
     //console.log(taxonomyList);
-    this.setState({taxonomy_data: taxonomyList});
-    //return taxonomyList;
-    
+    this.setState({taxonomy_data: taxonomyList});    
   }
 
   async loadTickets() {
@@ -136,47 +129,45 @@ class App extends Component {
     return (
       <div className="App">
         {/* <Header></Header> */}
-        
         <Router>
           <>
-
             { 
               !this.state.isAuthed ?  
               <>
               <Switch>
-                <Route path="/" render={(props) => <HomePage {...props} isAuthed={false} />} exact />
-                <Route path="/home" render={(props) => <HomePage {...props} isAuthed={false} />} exact />
-                <Route path="/login" render={(props) => <LoginPage {...props} isAuthed={false} />} exact />
-                {/* <Route path="/login" render={(props) => <LoginPage {...props} isAuthed={false} loginHandler={this.loginHandler}/>} exact /> */}
-                <Route path="/password" render={(props) => <PasswordPage {...props} isAuthed={false} />} exact />
-                <Route path="/pay-ticket-online" render={(props) => <PayTicketSearchPage {...props} isAuthed={false} />} exact />
+                <Route path="/" render={(props) => <HomePage {...props} />} exact />
+                <Route path="/home" render={(props) => <HomePage {...props} />} exact />
+                <Route path="/login" render={(props) => <LoginPage {...props} />} exact />
+                {/* <Route path="/login" render={(props) => <LoginPage {...props} loginHandler={this.loginHandler}/>} exact /> */}
+                <Route path="/password" render={(props) => <PasswordPage {...props} />} exact />
+                <Route path="/pay-ticket-online" render={(props) => <PayTicketSearchPage {...props} />} exact />
                 {/* TODO: proper auth for below 2 page and 404 page */}
-                <Route path="/ticket-pay" render={(props) => <PayTicketPage {...props} isAuthed={false} />} exact />  
-                <Route path="/ticket-status" render={(props) => <PayTicketStatusPage {...props} isAuthed={false} />} exact />
+                <Route path="/ticket-pay" render={(props) => <PayTicketPage {...props} />} exact />  
+                <Route path="/ticket-status" render={(props) => <PayTicketStatusPage {...props} />} exact />
                 <Route path='*' exact={true} component={No404Page} loading={this.state.loading}/>
               </Switch>
               </>
               : 
               <>
               <Switch>
-                <Route path="/" render={(props) => <Dashboard {...props} isAuthed={false} />} exact />
-                <Route path="/home" render={(props) => <Dashboard {...props} isAuthed={false} />} exact />
-                <Route path="/dashboard" render={(props) => <Dashboard {...props} isAuthed={true} />} exact />
-                <Route path="/ticket-add" render={(props) => <CreateTicketPage {...props} isAuthed={true} />} exact />
-                <Route path="/tickets" render={(props) => <SearchTicketPage {...props} isAuthed={true} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
-                <Route path="/ticket-edit" render={(props) => <EditTicketPage {...props} isAuthed={true} />} exact />
-                <Route path="/reports" render={(props) => <ReportPage {...props} isAuthed={true} />} exact />
-                <Route path="/bulk-pending-tickets" render={(props) => <BulkPendingTicketPage {...props} isAuthed={true} />} exact />
-                <Route path="/graph-report" render={(props) => <ReportGraphPage {...props} isAuthed={true} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
-                <Route path="/reports-by-day" render={(props) => <ReportDailyPage {...props} isAuthed={true} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
-                <Route path="/reports-by-week" render={(props) => <ReportWeeklyPage {...props} isAuthed={true} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
-                <Route path="/reports-by-month" render={(props) => <ReportMonthlyPage {...props} isAuthed={true} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
-                <Route path="/reports-by-year" render={(props) => <ReportYearlyPage {...props} isAuthed={true} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
-                <Route path="/about" render={(props) => <AboutPage {...props} isAuthed={true} />} exact />
-                <Route path="/help" render={(props) => <HelpPage {...props} isAuthed={true} />} exact />
+                <Route path="/" render={(props) => <Dashboard {...props} />} exact />
+                <Route path="/home" render={(props) => <Dashboard {...props} />} exact />
+                <Route path="/dashboard" render={(props) => <Dashboard {...props} />} exact />
+                <Route path="/ticket-add" render={(props) => <CreateTicketPage {...props} />} exact />
+                <Route path="/tickets" render={(props) => <SearchTicketPage {...props} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
+                <Route path="/ticket-edit" render={(props) => <EditTicketPage {...props} />}  />
+                <Route path="/reports" render={(props) => <ReportPage {...props} />} exact />
+                <Route path="/bulk-pending-tickets" render={(props) => <BulkPendingTicketPage {...props} />} exact />
+                <Route path="/graph-report" render={(props) => <ReportGraphPage {...props} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
+                <Route path="/reports-by-day" render={(props) => <ReportDailyPage {...props} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
+                <Route path="/reports-by-week" render={(props) => <ReportWeeklyPage {...props} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
+                <Route path="/reports-by-month" render={(props) => <ReportMonthlyPage {...props} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
+                <Route path="/reports-by-year" render={(props) => <ReportYearlyPage {...props} tickets={this.state.ticket_data} loading={this.state.loading} />} exact />
+                <Route path="/about" render={(props) => <AboutPage {...props} />} exact />
+                <Route path="/help" render={(props) => <HelpPage {...props} />} exact />
                 {/* TODO: proper auth for below 2 page and 404 page */}
-                <Route path="/ticket-pay" render={(props) => <PayTicketPage {...props} isAuthed={false} />} exact />  
-                <Route path="/ticket-status" render={(props) => <PayTicketStatusPage {...props} isAuthed={false} />} exact />
+                <Route path="/ticket-pay" render={(props) => <PayTicketPage {...props} />} exact />  
+                <Route path="/ticket-status" render={(props) => <PayTicketStatusPage {...props} />} exact />
                 <Route path='*' exact={true} component={No404Page} loading={this.state.loading}/>
               </Switch>
               </>
@@ -240,7 +231,7 @@ class App extends Component {
       tickets_filtered.push(item);
     }
 
-    //return tickets_filtered;
+    //save tickets_filtered;
     this.setState({ticket_data: tickets_filtered})
   }
   //ALTERNATIVE solution for extracting id from raw taxonomy data

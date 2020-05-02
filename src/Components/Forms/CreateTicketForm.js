@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Form.css';
 
 export default class CreateTicketForm extends React.Component {
@@ -12,8 +13,9 @@ export default class CreateTicketForm extends React.Component {
   }
 
   render() {
+    //console.log(this.props.tktId);
     return (
-      <section className="whole-form-area form-full">
+      <section className="whole-form-area form-full">   
         {/*<h2 className="form-title">Staff Login</h2>*/}
         <div className="form-area">
           
@@ -25,8 +27,8 @@ export default class CreateTicketForm extends React.Component {
               <div className="form-fields-group">
                 <div className="form-group">
                   <label className="form-label required">Ticket Type</label>
-                  <select className="form-input form-select" name="field_ticket_type" required="required">
-                    <option value={1} selected="selected">DAL - HALIFEX</option>
+                  <select className="form-input form-select" name="field_ticket_type" required="required" defaultValue={1}>
+                    <option value={1}>DAL - HALIFEX</option>
                     <option value={2}>Ticket type 1</option>
                     <option value={3}>Ticket type 2</option>
                     <option value={4}>Ticket type 3</option>
@@ -40,8 +42,8 @@ export default class CreateTicketForm extends React.Component {
 
                 <div className="form-group">
                   <label className="form-label">Payment Status</label>
-                  <select className="form-input form-select" name="field_payment_status">
-                    <option value="_none" selected="selected">- None -</option>
+                  <select className="form-input form-select" name="field_payment_status" defaultValue={'_none'}>
+                    <option value="_none">- None -</option>
                     <option value="Paid">Paid</option>
                     <option value="Unpaid">Unpaid</option>
                     <option value="Canceled">Canceled</option>
@@ -52,8 +54,8 @@ export default class CreateTicketForm extends React.Component {
 
               <div className="form-group">
                 <label className="form-label required">Province</label>
-                <select className="form-input form-select" name="field_province" required="required" >
-                  <option value={5} selected="selected">Nova Scotia</option>
+                <select className="form-input form-select" name="field_province" required="required" defaultValue={5}>
+                  <option value={5}>Nova Scotia</option>
                   <option value={6}>Province 1</option>
                   <option value={7}>Province 2</option>
                   <option value={8}>Province 3</option>
@@ -62,8 +64,8 @@ export default class CreateTicketForm extends React.Component {
 
               <div className="form-group">
                 <label className="form-label">Plate Code</label>
-                <select className="form-input form-select" name="field_plate_code">
-                  <option value="_none" selected="selected">- None -</option>
+                <select className="form-input form-select" name="field_plate_code" defaultValue={'_none'}>
+                  <option value="_none">- None -</option>
                   <option value={9}>Canada Plates</option>
                   <option value={10}>India Plates</option>
                   <option value={11}>US Plates</option>
@@ -71,12 +73,12 @@ export default class CreateTicketForm extends React.Component {
               </div>
               <div className="form-group">
                 <label className="form-label">Color</label>
-                <select className="form-input form-select" name="field_color">
+                <select className="form-input form-select" name="field_color" defaultValue={12}>
                   <option value="_none">- None -</option>
                   <option value={13}>Color Black</option>
                   <option value={14}>Color Blue</option>
                   <option value={15}>Color Red</option>
-                  <option value={12} selected="selected">Color Unknown</option>
+                  <option value={12} >Color Unknown</option>
                 </select>
               </div>
               <div className="form-group">
@@ -95,8 +97,8 @@ export default class CreateTicketForm extends React.Component {
               <div className="form-fields-group">
                 <div className="form-group">
                   <label className="form-label">Action Taken</label>
-                  <select className="form-input form-select" name="field_action_taken">
-                    <option value="_none" selected="selected">- None -</option>
+                  <select className="form-input form-select" name="field_action_taken" defaultValue={'_none'}>
+                    <option value="_none">- None -</option>
                     <option value={20}>Action Taken 1</option>
                     <option value={21}>Action Taken 2</option>
                     <option value={22}>Action Taken 3</option>
@@ -126,11 +128,11 @@ export default class CreateTicketForm extends React.Component {
               </div>
               <div className="form-group">
                 <label className="form-label required">Ticket Date</label>
-                <input className="form-input form-date" title="Date (e.g. 2020-04-23)" type="date" min="1900-01-01" max="2050-12-31"  name="field_date" value={this.state.date} size="12" required="required"></input>
+                <input className="form-input form-date" title="Date (e.g. 2020-04-23)" type="date" min="1900-01-01" max="2050-12-31"  name="field_date" defaultValue={this.state.date} size="12" required="required"></input>
               </div>
               <div className="form-group">
                 <label className="form-label required">Ticket Time</label>
-                <input className="form-input form-time" type="time" name="field_ticket_time" required="required" value="10:59"></input>
+                <input className="form-input form-time" type="time" name="field_ticket_time" required="required" defaultValue="0:0"></input>
               </div>
               <div className="form-group">
                 <label className="form-label">Class</label>
@@ -215,7 +217,7 @@ export default class CreateTicketForm extends React.Component {
             <div className="col-md-12">
               <div className="form-group">
                 <label className="form-label">Remarks</label>
-                <textarea className="form-input form-textarea" name="field_remarks" rows={5} cols={60} placeholder defaultValue={""} />
+                <textarea className="form-input form-textarea" name="field_remarks" rows={5} cols={60} defaultValue={""} />
               </div>
             </div>
             
@@ -226,7 +228,7 @@ export default class CreateTicketForm extends React.Component {
             </div>
           </form>
         </div>	
-        <a href="/dashboard">Skip</a>
+        <Link to="/dashboard">Skip</Link>
       </section>
     );
   }

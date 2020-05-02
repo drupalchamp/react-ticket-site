@@ -10,7 +10,7 @@ export default class ReportMonthly extends React.Component {
   render() {
     return (
       <div>
-        <Header isAuthed={this.props.isAuthed} ></Header>
+        <Header></Header>
         <section className="page-title">
           <h1>Report By Month</h1>
         </section>

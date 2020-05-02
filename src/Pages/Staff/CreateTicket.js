@@ -7,7 +7,7 @@ export default class CreateTicket extends React.Component {
   render() {
     return (
       <div>
-        <Header isAuthed={this.props.isAuthed} ></Header>
+        <Header></Header>
         <section className="page-title">
           <h1>New Ticket</h1>
         </section>
