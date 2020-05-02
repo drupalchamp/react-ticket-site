@@ -1,0 +1,56 @@
+{
+    "dashboard": 
+    [       
+        {
+            "name": "Create New Ticket",
+            "link": "/ticket-add",
+            "image": "create_icon.png"
+        },
+        {
+            "name": "Search Ticket",
+            "link": "/tickets",
+            "image": "search_icon.png"
+        },
+        {
+            "name": "Report",
+            "link": "/reports",
+            "image": "report_icon.png"
+        }   
+    ],
+    "report": 
+    [       
+        {
+            "name": "Bulk Pending Tickets",
+            "link": "/bulk-pending-tickets",
+            "image": "pending_icon.png"
+        },
+        {
+            "name": "Graph Report",
+            "link": "/graph-report",
+            "image": "report_icon.png"
+        }  
+    ],
+    "salesReport": 
+    [       
+        {
+            "name": "Daily",
+            "link": "/reports-by-day",
+            "image": "report_icon.png"
+        },
+        {
+            "name": "Weekly",
+            "link": "/reports-by-week",
+            "image": "report_icon.png"
+        },
+        {
+            "name": "Monthly",
+            "link": "/reports-by-month",
+            "image": "report_icon.png"
+        },
+        {
+            "name": "Yearly",
+            "link": "/reports-by-year",
+            "image": "report_icon.png"
+        } 
+    ]
+}

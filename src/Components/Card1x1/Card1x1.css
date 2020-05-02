@@ -1,0 +1,109 @@
+.whole-card1x1-area{
+  margin-bottom: 40px;
+}
+.card1x1-area{
+  text-align: left;
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.card-1x1 {
+  position: relative;
+  /*width: 308px;
+  height: 270px;*/
+  width: 100%;
+  height: 290px;;
+  float: left;
+  margin-right: 35px;
+  margin-bottom: 35px;
+  text-align: center;
+  position: relative;
+  border: 1px solid #00b7e1;
+  transition: all 0.5s ease;
+}
+.card-1x1:last-child{
+  margin-right: 0px;
+}
+.card-1x1 .overlay-link{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 11;
+}
+.card-1x1 .overlay-link a{
+  display: block;
+  height: 100%;
+  font-size: 0;
+}
+
+.card-1x1 .card-image{
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+}
+.card-1x1 .card-image img{
+  width: 50%;
+  height: auto;
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+.card-1x1:hover .card-image img{
+  opacity: 0.6;
+}
+
+.card-1x1 .card-bottom span{
+  display: inline-block;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+  vertical-align: middle;
+  padding: 22px 8px;
+  position: relative;
+  z-index: 11;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.card-1x1:hover .card-bottom span{
+  color: black;
+}
+
+.card-1x1 .card-bottom::after{
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  background: #00b7e1;
+  z-index: -1;
+  left: 0px;
+  bottom: 0px;
+}
+
+/* card 1x1 small */
+.card-1x1.card-small{
+  /*width: 215px;*/
+  width: 100%;
+  height: 270px;
+}
+
+/*************************** tablet and mobile ***********************/
+@media only screen and (min-width:768px) and (max-width:1279px){
+  .card-1x1,
+  .card-1x1.card-small{
+    height: 100%;
+  }
+  .card-1x1 .card-bottom span{
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width:0px) and (max-width:767px){
+  .card-1x1:not(.card-small) .card-image img{
+    width: 150px;
+  }
+}
+@media only screen and (min-width:0px) and (max-width:477px) {
+  .card-1x1.card-small{
+    height: 240px;
+  }
+}

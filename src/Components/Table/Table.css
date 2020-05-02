@@ -1,0 +1,116 @@
+.whole-table-area{
+  margin-top: 15px;
+}
+.table th{
+  border: 0px;
+  padding: 12px 15px;
+  vertical-align: middle;
+  background-color: #00b7e1;
+  color: #ffffff;
+}
+.table thead th,
+.table td{
+  border: none;
+}
+.table thead th:first-child{
+  border-top-left-radius: 5px;
+}
+
+.table thead th:last-child{
+  border-top-right-radius: 5px;
+}
+.table tr:last-child{
+  border-bottom: 1px solid #efefef;
+}
+.table tbody > tr:nth-of-type(odd){
+  background-color: #f9f9f9;
+}
+.table > tbody > tr:hover{
+  background-color: #f5f5f5;
+}
+.table .table-column{
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.table-btn{
+  color: #ffffff;
+  padding: 7px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  background: #00b7e1;
+  text-transform: uppercase;
+}
+.table-btn a{
+  color: #ffffff;
+}
+.table-btn.success{
+  background: green;
+  cursor: default;
+}
+.table-btn.inactive{
+  background: grey;
+  cursor: default;
+}
+.table-btn.danger{
+  background: red;
+}
+.table-btn.danger:hover{
+  background: black;
+}
+
+/********************** Ticket Listing Table - Mobile ***********************/
+@media only screen and (min-width:0px) and (max-width:767px){
+  #ticket-listing.table{
+    border: 1px solid #efefef;
+  }
+  #ticket-listing.table thead{
+    display: none;
+  }
+  #ticket-listing.table tbody > tr{
+    border-bottom: 1px solid #efefef;
+  }
+  #ticket-listing.table tr td{
+    width: 100%;
+    position: relative;
+    display: block;
+    text-align: left;
+    /*min-width: 37px;*/
+    padding: 8px 8px 8px 48%;
+  }
+
+  #ticket-listing.table tr td:before{
+    width: 40%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    content: "";
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 15px;
+    text-align: left;
+    text-transform: capitalize;
+  }
+
+  #ticket-listing.table tr td:nth-child(1):before{
+    content: "Ticket Number";
+  }
+  #ticket-listing.table tr td:nth-child(2):before{
+    content: "Plate No.";
+  }
+  #ticket-listing.table tr td:nth-child(3):before{
+    content: "Created date";
+  }
+  #ticket-listing.table tr td:nth-child(4):before{
+    content: "Price";
+  }
+  #ticket-listing.table tr td:nth-child(5):before{
+    content: "Status";
+    padding-top: 14px;
+  }
+  #ticket-listing.table tr td:nth-child(6):before{
+    content: "Action";
+    padding-top: 12px;
+  }
+}
+

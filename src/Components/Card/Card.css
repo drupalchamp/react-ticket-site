@@ -1,0 +1,65 @@
+.card-area{
+  text-align: center;
+  width: 550px;
+  margin: auto;
+  margin-top: 80px;
+}
+.card-area .card {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 32px;
+  min-width: 500px;
+  margin: 12px;
+}
+.card-area .card:hover{
+  background-color: #222222;
+  transition: all 0.5s ease;
+}
+.card-area .card img {
+  height: 100px;
+  display: inline-block;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+  vertical-align: middle;
+  border: 0;
+}
+.card-area .card:hover img,
+.card-area .card:active img,
+.card-area .card:focus img{
+    filter: invert(0%); 
+    -webkit-filter:invert(0%);
+}
+.card-area .card span {
+  width: 360px;
+  display: inline-block;
+  color: #fff;
+}
+
+/*************************** tablet and mobile ***********************/
+@media only screen and (min-width:0px) and (max-width:1279px){
+
+}
+@media only screen and (min-width:0px) and (max-width:767px){
+  .card-area{
+    width: 100%;
+  }
+  .card-area .card{
+    min-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 20px;
+  }
+  .card-area .card img{
+    height: 75px;
+  }
+  .card-area .card span{
+    display: block;
+    width: auto;
+    padding-top: 10px;
+  }
+}
+@media only screen and (min-width:0px) and (max-width:477px) {
+  .card-area .card span{
+    font-size: 22px;
+  }
+}

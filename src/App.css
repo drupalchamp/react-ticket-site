@@ -1,0 +1,208 @@
+/*
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/
+
+
+/***************** Common css *******************/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-size: 16px;
+	line-height: 24px;
+  font-family: 'Open Sans', sans-serif;
+	color: #000;
+  background-color:#ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color:#000;
+	font-weight: 700;
+	line-height: 1.25;
+}
+h1{
+  font-size: 30px; 
+}
+h2{
+  font-size: 25px;
+}
+
+a{
+  color: #3056a5;
+  text-decoration: none;
+}
+
+a.active,
+a:hover,
+a:focus{
+	text-decoration:none !important;
+	color:#efd01b;
+	outline:none;
+	box-shadow:none;	
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.btn_main {
+  background: #00b7e1;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 0px;
+  padding: 5px 10px;
+  border: 0px;
+}
+.btn_success,
+.btn-primary:not(:disabled):not(.disabled).active{
+  background: green;
+}
+.btn_danger{
+  background: red;
+}
+.btn_error{
+  background: gold;
+  color: #000;
+  vertical-align: baseline;
+}
+a.btn_error:focus{
+  color: #fff;
+}
+.btn_feed{
+  background: #f60;
+  font-size: 18px;
+}
+.btn_dark{
+  background: #000;
+}
+.btn_main:hover{
+  background: #000 !important;
+  color: #fff !important;
+}
+.btn_dark:hover{
+  background: #00b7e1 !important;
+}
+.btn_header:hover{
+  background: gold !important;
+}
+.btn .glyphicon,
+.page-top-msg .glyphicon{
+  padding-right: 6px;
+}
+.page-top-msg .glyphicon{
+  vertical-align: top;
+}
+
+input, button, select, textarea{
+  font-family: inherit;
+}
+
+.center{
+  text-align: center;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+
+.feed-area{
+  margin: 3rem 0;
+}
+
+.space-up-large{
+  margin-top: 80px !important;
+}
+.space-up{
+  margin-top: 40px !important;
+}
+
+/*************************** tablet and mobile ***********************/
+@media only screen and (min-width:0px) and (max-width:1279px){
+
+}
+@media only screen and (min-width:768px) and (max-width:1279px){
+
+}
+@media only screen and (min-width:980px) and (max-width:1279px){
+}
+@media only screen and (min-width:768px) and (max-width:979px){
+
+}
+
+@media only screen and (min-width:0px) and (max-width:767px){
+  
+}
+@media only screen and (min-width:478px) and (max-width:767px){
+
+}
+@media only screen and (min-width:0px) and (max-width:477px) {
+
+}
+@media only screen and (min-width:0px) and (max-width:400px) {
+
+}

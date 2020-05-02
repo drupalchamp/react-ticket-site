@@ -1,0 +1,210 @@
+h1.page-header{
+	color: #000000;
+	font-size: 27px;
+  line-height: 27px;
+  padding-bottom: 7px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-bottom: 0px solid #eeeeee;
+}
+
+h1.page-header{
+  border-bottom: 2px solid #DFDFDF;
+  margin-bottom: 0px;
+}
+.page-title{
+  width: 1000px;
+  margin: auto;
+  border-bottom: 1px solid #DFDFDF;
+}
+.page-title h1{
+  margin-top: 12px;
+  margin-bottom: 4px;
+  text-align: left;
+  font-size: 27px;
+}
+.section-title{
+  border-bottom: 1px solid #DFDFDF;
+  margin-bottom: 25px;
+  padding-bottom: 4px;
+  font-size: 27px;
+}
+.page-content{
+  width: 1000px;
+    margin: auto;
+    min-height: 300px;
+    padding-top: 15px;
+    padding-bottom: 70px;
+    overflow: hidden;
+    position: relative;
+}
+.page-content .page-text{
+  text-align: justify;
+}
+
+/************************** Page top area *****************************/
+.page-top-msg{
+  text-align: center;
+  margin: 12px 0px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.page-top-area{
+  width: max-content;
+  margin: auto;
+  text-align: left;
+}
+.page-top-area .page-top-label{
+  font-size: 24px;
+  text-transform: uppercase;
+  display: inline-block;
+  min-width: 200px;
+}
+
+.page-top-area .page-top-data{
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 30px;
+  display: inline-block;
+}
+
+/***************************** Page Btn area *******************/
+.page-btn-area .btn{
+  margin: 0 12px 12px;
+  min-width: 120px;
+}
+
+/******************** page table search form area *****************/
+.page-search-area{
+  margin-bottom: 5px;
+}
+.page-search-form .form-group{
+  display: inline-block;
+}
+.page-search-form .form-label{
+  text-transform: capitalize;
+  font-size: 14px;
+  margin-right: 4px;
+}
+.page-search-form .form-input{
+  display: inline-block;
+  width: auto;
+  height: 32px;
+}
+
+.page-search-form #status .form-input{
+
+}
+.page-search-form #by_date .form-input{
+  width: 85px;
+}
+.page-search-form #by_date > .form-input +.form-input{
+  margin-left: 10px;
+}
+
+.page-search-form .form-group.form-control-area{
+  padding: 0;
+  margin: 0;
+  overflow: unset;
+}
+.page-search-form .form-group.form-control-area .btn{
+  padding: 5px 16px;
+}
+@media only screen and (min-width:768px) {
+  .page-search-form .form-group{
+    margin-right: 10px;
+  }
+  .page-search-form #ticket_no .form-input,
+  .page-search-form #plate_no .form-input,
+  .page-search-form #booking .form-input,
+  .page-search-form #by_date .form-input{
+    width: 134px;
+  }
+  .page-search-form #reg_no .form-input{
+    width: 200px;
+  }
+  .page-search-form .btn_danger{
+    margin-left: 10px;
+  }
+}
+@media only screen and (min-width:0px) and (max-width:767px){
+  .page-search-form .form-group{
+    width: 48%;
+  }
+  .page-search-form .form-input{
+    display: block;
+    width: 100%;
+  }
+  .page-search-form .form-group.form-control-area{
+    width: 100%;
+    display: block;
+  }
+  .page-search-form .form-group.form-control-area .btn{
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+}
+
+
+/********************* Specific page table search form ****************/
+@media only screen and (min-width:0px) and (max-width:767px){
+  #search_ticket.page-search-form  .form-group:nth-child(odd){
+    margin-right: 4%;
+  }
+  #report_by_day.page-search-form #ticket_no.form-group,
+  #report_by_week.page-search-form #ticket_no.form-group,
+  #report_by_month.page-search-form #ticket_no.form-group,
+  #report_by_year.page-search-form #ticket_no.form-group,
+  #bulk_ticket.page-search-form #reg_no.form-group{
+    width: 100%;
+  }
+  #report_by_day.page-search-form  .form-group:nth-child(even),
+  #report_by_week.page-search-form  .form-group:nth-child(even),
+  #report_by_month.page-search-form  .form-group:nth-child(even),
+  #report_by_year.page-search-form  .form-group:nth-child(even){
+    margin-right: 4%;
+  }
+  #report_by_week.page-search-form #by_date .form-label{
+    width: 100%;
+  }
+  #report_by_week.page-search-form #by_date .form-input{
+    width: 48%;
+    display: inline-block;
+  }
+  .page-search-form #by_date > .form-input +.form-input{
+    margin-left: 4%;
+  }
+}
+@media only screen and (min-width:768px) and (max-width:979px){
+  .page-search-form:not(#bulk_ticket) .form-label{
+    display: block;
+  }
+  #search_ticket.page-search-form #plate_no .form-input,
+  #search_ticket.page-search-form #ticket_no .form-input{
+    width: 120px;
+  }
+  #search_ticket.page-search-form .form-group.form-control-area .btn{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/***************************** mobile *************************/
+@media only screen and (min-width:0px) and (max-width:1279px){
+  .page-title,
+  .page-content{
+    width: 92%;
+  }
+  .page-content{
+    padding-top: 8px;
+  }
+}
+@media only screen and (min-width:0px) and (max-width:767px){
+  
+}
+@media only screen and (min-width:0px) and (max-width:767px){
+  
+}

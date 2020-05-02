@@ -1,0 +1,49 @@
+/*************** graph area ******************/
+.whole-graph-area{
+  margin-top: 20px;
+}
+.graph-title{
+  font-weight: bold;
+  font-size: 18px;
+}
+.graph-area{
+  max-width: 360px;
+  margin: auto;
+  font-family: monospace;
+}
+
+/******************** legend area **********************/
+.graph-legend-area span{
+  display: inline-block;
+  line-height: 20px;
+}
+.graph-legend-area .graph-legend{
+  padding-right: 20px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.graph-legend-area .graph-legend::before{
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: black;
+  vertical-align: bottom;
+}
+.graph-legend-area .graph-legend.legend-1::before{
+  background: #67b7dc;
+}
+.graph-legend-area .graph-legend.legend-2::before{
+  background: #fdd400;
+}
+.graph-legend-area .graph-legend.legend-3::before{
+  background: #84b761;
+}
+.graph-legend-area .legend-lable{
+  padding-left: 10px;
+}
+.graph-legend-area .legend-value{
+  width: 40px;
+  text-align: right;
+}
